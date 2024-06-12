@@ -1,0 +1,48 @@
+version: 2
+
+models:
+  - name: stg_economic_indicators
+    description: "Staging table for economic indicators"
+    columns:
+      - name: country_code
+        description: "Country code"
+      - name: indicator_code
+        description: "Indicator code"
+      - name: year
+        description: "Year"
+      - name: indicator_value
+        description: "Value of the economic indicator"
+
+  - name: stg_dates
+    description: "Staging table for dates"
+    columns:
+      - name: date_id
+        description: "Unique identifier for the date (year)"
+      - name: date
+        description: "Full date"
+      - name: month
+        description: "Month"
+      - name: quarter
+        description: "Quarter"
+      - name: year
+        description: "Year"
+
+  - name: stg_countries
+    description: "Staging table for countries"
+    columns:
+      - name: country_id
+        description: "Country code"
+      - name: country_name
+        description: "Name of the country"
+      - name: region
+        description: "Region of the country from seed data"
+      - name: income_group
+        description: "Income group of the country from seed data"
+
+  - name: stg_indicators
+    description: "Staging table for indicators"
+    columns:
+      - name: indicator_id
+        description: "Indicator code"
+      - name: indicator_name
+        description: "Name of the indicator"
