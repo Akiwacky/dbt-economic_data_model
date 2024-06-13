@@ -46,7 +46,7 @@ models:
           - unique
           - not_null
 
-  - name: fct_economic_data 
+  - name: fct_economic_indicators 
     description: "Fact Table for economic indicators"
     columns:
       - name: sk_country
