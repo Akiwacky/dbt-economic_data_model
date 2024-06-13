@@ -6,12 +6,12 @@ models:
     columns:
       - name: sk_country
         description: "surrogate key for country dimension"
-        tests:
+        data_tests:
           - unique
           - not_null
       - name: nk_country_id
         description: "natural key for country dimension"
-        tests:
+        data_tests:
           - unique
           - not_null
       - name: dsc_country_name
@@ -26,12 +26,12 @@ models:
     columns:
       - name: sk_indicator
         description: "Surrogate key for indicator"
-        tests:
+        data_tests:
           - unique
           - not_null
       - name: nk_indicator_id
         description: "Natural key for indicator"
-        tests:
+        data_tests:
           - unique
           - not_null
       - name: dsc_indicator_name 
@@ -42,7 +42,7 @@ models:
     columns:
       - name: date_day
         description: "Full date"
-        tests:
+        data_tests:
           - unique
           - not_null
 
@@ -51,13 +51,13 @@ models:
     columns:
       - name: sk_country
         description: "Surrogate key for country"
-        tests:
+        data_tests:
           - relationships:
               field: sk_country
               to: ref('dim_countries')
       - name: sk_indicator
         description: "Surrogate key for indicator"
-        tests:
+        data_tests:
           - relationships:
               field: sk_indicator
               to: ref('dim_indicators')
