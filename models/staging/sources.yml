@@ -6,6 +6,5 @@ sources:
     schema: economic_data # Name of Dataset
     tables:
       - name: economic_indicators 
-      - name: dates
       - name: countries 
       - name: indicators 

@@ -1,0 +1,67 @@
+version: 2
+
+models:
+  - name: dim_countries
+    description: "Dimension table for countries"
+    columns:
+      - name: sk_country
+        description: "surrogate key for country dimension"
+        tests:
+          - unique
+          - not_null
+      - name: nk_country_id
+        description: "natural key for country dimension"
+        tests:
+          - unique
+          - not_null
+      - name: dsc_country_name
+        description: "Name of the country"
+      - name: dsc_region
+        description: "Name of the region"
+      - name: dsc_income_group
+        description: "Income group of the country"
+  
+  - name: dim_indicators
+    description: "Dimension table for economic indicators"
+    columns:
+      - name: sk_indicator
+        description: "Surrogate key for indicator"
+        tests:
+          - unique
+          - not_null
+      - name: nk_indicator_id
+        description: "Natural key for indicator"
+        tests:
+          - unique
+          - not_null
+      - name: dsc_indicator_name 
+        description: "Name of indicator"
+
+  - name: dim_dates
+    description: "Dimension table for datetime"
+    columns:
+      - name: date_day
+        description: "Full date"
+        tests:
+          - unique
+          - not_null
+
+  - name: fct_economic_data 
+    description: "Fact Table for economic indicators"
+    columns:
+      - name: sk_country
+        description: "Surrogate key for country"
+        tests:
+          - relationships:
+              field: sk_country
+              to: ref('dim_countries')
+      - name: sk_indicator
+        description: "Surrogate key for indicator"
+        tests:
+          - relationships:
+              field: sk_indicator
+              to: ref('dim_indicator')
+      - name: sk_year
+        description: "Surrogate key for year"
+      - name: mtr_indicator_value
+        description: "metric for indicator value"

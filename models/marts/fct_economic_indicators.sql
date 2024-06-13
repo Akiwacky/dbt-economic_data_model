@@ -6,7 +6,6 @@ with stg_fct_economic_indicators as (
         indicator_value as mtr_indicator_value
     FROM {{ ref('stg_economic_indicators') }}
 )
-
 SELECT 
     coalesce(d_country.sk_country, '-1') as sk_country,
     coalesce(d_indicator.sk_indicator, '-1') as sk_indicator,
