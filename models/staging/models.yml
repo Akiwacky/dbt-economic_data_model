@@ -13,20 +13,6 @@ models:
       - name: indicator_value
         description: "Value of the economic indicator"
 
-  - name: stg_dates
-    description: "Staging table for dates"
-    columns:
-      - name: date_id
-        description: "Unique identifier for the date (year)"
-      - name: date
-        description: "Full date"
-      - name: month
-        description: "Month"
-      - name: quarter
-        description: "Quarter"
-      - name: year
-        description: "Year"
-
   - name: stg_countries
     description: "Staging table for countries"
     columns:
