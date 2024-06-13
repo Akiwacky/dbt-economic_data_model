@@ -60,7 +60,7 @@ models:
         tests:
           - relationships:
               field: sk_indicator
-              to: ref('dim_indicator')
+              to: ref('dim_indicators')
       - name: sk_year
         description: "Surrogate key for year"
       - name: mtr_indicator_value
